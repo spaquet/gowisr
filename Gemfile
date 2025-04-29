@@ -77,7 +77,7 @@ group :development do
   gem "web-console"
   gem "dotenv-rails"             # Environment variable management
   gem "bullet"                   # N+1 query detection
-  gem "annotate"                 # Model schema documentation
+  gem "annotaterb"               # Model schema documentation
   gem "letter_opener"            # Preview emails in the browser
 end
 

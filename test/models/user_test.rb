@@ -1,3 +1,35 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :uuid             not null, primary key
+#  avatar_url      :string
+#  email           :string
+#  is_active       :boolean          default(TRUE)
+#  last_sign_in_at :datetime
+#  locale          :string           default("en")
+#  name            :string
+#  provider        :string
+#  time_zone       :string
+#  uid             :string
+#  use_gravatar    :boolean          default(TRUE)
+#  username        :string
+#  verified        :boolean
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  stytch_user_id  :string
+#
+# Indexes
+#
+#  index_users_on_email             (email) UNIQUE
+#  index_users_on_locale            (locale)
+#  index_users_on_provider          (provider)
+#  index_users_on_provider_and_uid  (provider,uid) UNIQUE
+#  index_users_on_stytch_user_id    (stytch_user_id) UNIQUE
+#  index_users_on_time_zone         (time_zone)
+#  index_users_on_use_gravatar      (use_gravatar)
+#  index_users_on_username          (username) UNIQUE
+#
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
