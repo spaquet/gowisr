@@ -1,0 +1,200 @@
+<%# app/views/pages/about.html.erb %>
+<% content_for :title, "About Us - Gowisr" %>
+<div class="bg-background-light py-12">
+  <div class="container mx-auto px-4 text-center">
+    <h1 class="text-4xl font-bold mb-4">About Gowisr</h1>
+    <p class="text-xl text-text-muted max-w-2xl mx-auto">
+      Our mission is to make advanced AI analytics accessible to everyone.
+    </p>
+  </div>
+</div>
+<!-- Our Story Section -->
+<div class="container mx-auto px-4 py-16">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <div>
+      <h2 class="text-3xl font-semibold mb-6">Our Story</h2>
+      <p class="text-text-muted mb-6">
+        Gowisr was founded in 2023 with a clear vision: to democratize access to advanced AI analytics. 
+        We believe that the power of artificial intelligence should be accessible to everyone, not just 
+        large enterprises with dedicated data science teams.
+      </p>
+      <p class="text-text-muted mb-6">
+        Our team of AI researchers, engineers, and data scientists came together to build a platform that 
+        makes it easy for anyone to analyze complex data and extract meaningful insights without needing 
+        specialized technical skills.
+      </p>
+      <p class="text-text-muted">
+        Today, Gowisr is used by thousands of individuals and organizations around the world to make 
+        better, data-driven decisions every day.
+      </p>
+    </div>
+    <div class="bg-background p-8 rounded-lg border border-background-lighter shadow-sm">
+      <div class="h-64 md:h-96 bg-background-light rounded-md border border-background-lighter flex items-center justify-center">
+        <div class="text-center p-6">
+          <div class="inline-flex items-center justify-center p-4 bg-primary-dark/20 rounded-full mb-4">
+            <%= icon "users", library: "lucide", class: "h-8 w-8 text-primary" %>
+          </div>
+          <p class="text-text-muted">Our team photo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Our Values Section -->
+<div class="bg-background-light py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-semibold text-center mb-12">Our Values</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Value 1 -->
+      <div class="bg-background rounded-lg p-6 border border-background-lighter">
+        <div class="inline-flex items-center justify-center p-3 bg-primary-dark/20 rounded-full mb-6">
+          <%= icon "lightbulb", library: "lucide", class: "h-6 w-6 text-primary" %>
+        </div>
+        <h3 class="text-xl font-medium mb-3">Innovation</h3>
+        <p class="text-text-muted">We're committed to pushing the boundaries of what's possible with AI technology, constantly exploring new ways to improve our platform.</p>
+      </div>
+      <!-- Value 2 -->
+      <div class="bg-background rounded-lg p-6 border border-background-lighter">
+        <div class="inline-flex items-center justify-center p-3 bg-primary-dark/20 rounded-full mb-6">
+          <%= icon "sun", library: "lucide", class: "h-6 w-6 text-primary" %>
+        </div>
+        <h3 class="text-xl font-medium mb-3">Accessibility</h3>
+        <p class="text-text-muted">We believe advanced technology should be accessible to everyone. We design our platform to be intuitive, affordable, and inclusive.</p>
+      </div>
+      <!-- Value 3 -->
+      <div class="bg-background rounded-lg p-6 border border-background-lighter">
+        <div class="inline-flex items-center justify-center p-3 bg-primary-dark/20 rounded-full mb-6">
+          <%= icon "shield", library: "lucide", class: "h-6 w-6 text-primary" %>
+        </div>
+        <h3 class="text-xl font-medium mb-3">Trust</h3>
+        <p class="text-text-muted">We prioritize security, privacy, and transparency in everything we do. Your data is always protected, and you maintain full control over it.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Team Section -->
+<div class="container mx-auto px-4 py-16">
+  <h2 class="text-3xl font-semibold text-center mb-4">Meet Our Team</h2>
+  <p class="text-text-muted text-center max-w-2xl mx-auto mb-12">
+    The passionate individuals behind Gowisr who are dedicated to our mission.
+  </p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- Team Member 1 -->
+    <div class="text-center">
+      <div class="mb-4 mx-auto h-32 w-32 rounded-full bg-background-light border border-background-lighter flex items-center justify-center">
+        <div class="inline-flex items-center justify-center p-4 bg-primary-dark/20 rounded-full">
+          <%= icon "user", library: "lucide", class: "h-6 w-6 text-primary" %>
+        </div>
+      </div>
+      <h3 class="text-lg font-medium">Sarah Chen</h3>
+      <p class="text-text-muted">CEO & Co-Founder</p>
+    </div>
+    <!-- Team Member 2 -->
+    <div class="text-center">
+      <div class="mb-4 mx-auto h-32 w-32 rounded-full bg-background-light border border-background-lighter flex items-center justify-center">
+        <div class="inline-flex items-center justify-center p-4 bg-primary-dark/20 rounded-full">
+          <%= icon "user", library: "lucide", class: "h-6 w-6 text-primary" %>
+        </div>
+      </div>
+      <h3 class="text-lg font-medium">James Wilson</h3>
+      <p class="text-text-muted">CTO & Co-Founder</p>
+    </div>
+    <!-- Team Member 3 -->
+    <div class="text-center">
+      <div class="mb-4 mx-auto h-32 w-32 rounded-full bg-background-light border border-background-lighter flex items-center justify-center">
+        <div class="inline-flex items-center justify-center p-4 bg-primary-dark/20 rounded-full">
+          <%= icon "user", library: "lucide", class: "h-6 w-6 text-primary" %>
+        </div>
+      </div>
+      <h3 class="text-lg font-medium">Maria Lopez</h3>
+      <p class="text-text-muted">Head of AI Research</p>
+    </div>
+    <!-- Team Member 4 -->
+    <div class="text-center">
+      <div class="mb-4 mx-auto h-32 w-32 rounded-full bg-background-light border border-background-lighter flex items-center justify-center">
+        <div class="inline-flex items-center justify-center p-4 bg-primary-dark/20 rounded-full">
+          <%= icon "user", library: "lucide", class: "h-6 w-6 text-primary" %>
+        </div>
+      </div>
+      <h3 class="text-lg font-medium">David Patel</h3>
+      <p class="text-text-muted">Head of Product</p>
+    </div>
+  </div>
+</div>
+<!-- Investors Section -->
+<div class="bg-background-light py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-semibold text-center mb-4">Backed By</h2>
+    <p class="text-text-muted text-center max-w-2xl mx-auto mb-12">
+      We're proud to be supported by leading investors who believe in our vision.
+    </p>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+      <div class="h-16 bg-background rounded-lg border border-background-lighter flex items-center justify-center">
+        <span class="text-text-muted">Venture Partners</span>
+      </div>
+      <div class="h-16 bg-background rounded-lg border border-background-lighter flex items-center justify-center">
+        <span class="text-text-muted">Tech Capital</span>
+      </div>
+      <div class="h-16 bg-background rounded-lg border border-background-lighter flex items-center justify-center">
+        <span class="text-text-muted">AI Ventures</span>
+      </div>
+      <div class="h-16 bg-background rounded-lg border border-background-lighter flex items-center justify-center">
+        <span class="text-text-muted">Future Fund</span>
+      </div>
+      <div class="h-16 bg-background rounded-lg border border-background-lighter flex items-center justify-center">
+        <span class="text-text-muted">Seed Investors</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Join Us Section -->
+<div class="container mx-auto px-4 py-16">
+  <div class="bg-background rounded-lg border border-background-lighter p-8 sm:p-12 max-w-4xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-2xl font-semibold mb-4">Join Our Team</h2>
+        <p class="text-text-muted mb-6">
+          We're always looking for talented individuals who are passionate about AI, data science, and building 
+          products that make a difference.
+        </p>
+        <a href="/careers" class="inline-flex items-center px-4 py-2 border border-transparent bg-primary hover:bg-primary-dark text-white font-medium rounded-md transition">
+          View open positions
+          <%= icon "arrow-right", library: "lucide", class: "ml-2 h-4 w-4" %>
+        </a>
+      </div>
+      <div class="bg-background-light rounded-md border border-background-lighter p-6">
+        <h3 class="text-lg font-medium mb-4">Benefits</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-3" %>
+            <span>Competitive compensation</span>
+          </li>
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-3" %>
+            <span>Remote-first work environment</span>
+          </li>
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-3" %>
+            <span>Comprehensive health benefits</span>
+          </li>
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-3" %>
+            <span>Professional development opportunities</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contact CTA Section -->
+<div class="bg-background-light py-16">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-semibold mb-4">Get in Touch</h2>
+    <p class="text-text-muted mb-8 max-w-2xl mx-auto">
+      Have questions or want to learn more about Gowisr? We'd love to hear from you.
+    </p>
+    <a href="/contact" class="inline-flex items-center px-6 py-3 border border-transparent bg-primary hover:bg-primary-dark text-white font-medium rounded-md transition">
+      Contact us
+    </a>
+  </div>
+</div>

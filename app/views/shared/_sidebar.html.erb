@@ -1,0 +1,116 @@
+<!-- app/views/shared/_sidebar.html.erb -->
+<nav class="flex h-full min-h-0 flex-col">
+  <!-- Header with centered company name, no dropdown -->
+  <div class="flex flex-col border-b border-zinc-950/5 p-4 dark:border-white/5">
+    <div class="text-center py-2">
+      <span class="text-lg font-semibold text-zinc-900 dark:text-white">Gowisr</span>
+    </div>
+  </div>
+  <!-- Body -->
+  <div class="flex flex-1 flex-col overflow-y-auto p-4">
+    <!-- Main navigation -->
+    <div class="flex flex-col gap-0.5">
+      <!-- Create new chat button -->
+      <a href="/chats/new" class="flex w-full items-center gap-3 rounded-lg bg-zinc-900 px-2 py-2.5 text-left text-base/6 font-medium text-white sm:py-2 sm:text-sm/5 dark:bg-white dark:text-zinc-900">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 shrink-0 fill-white sm:size-5 dark:fill-zinc-900">
+          <path d="M12 5v14M5 12h14"></path>
+        </svg>
+        <span class="truncate">New Chat</span>
+      </a>
+      <!-- Create new project button -->
+      <a href="/projects/new" class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 hover:bg-zinc-950/5 sm:py-2 sm:text-sm/5 dark:text-white dark:hover:bg-white/5">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 shrink-0 fill-zinc-500 sm:size-5">
+          <path d="M12 5v14M5 12h14"></path>
+        </svg>
+        <span class="truncate">New Project</span>
+      </a>
+      <!-- Search -->
+      <div class="my-2 relative">
+        <div class="relative block w-full">
+          <input type="text" placeholder="Search..." class="block w-full appearance-none rounded-lg border border-zinc-950/10 py-[calc(theme(spacing.2.5)-1px)] pl-10 pr-[calc(theme(spacing.3.5)-1px)] text-base/6 text-zinc-950 placeholder:text-zinc-500 focus:border-zinc-950/20 focus:outline-hidden focus:ring-2 focus:ring-blue-500 sm:py-[calc(theme(spacing.1.5)-1px)] sm:text-sm/6 dark:border-white/10 dark:bg-white/5 dark:text-white dark:focus:border-white/20">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pointer-events-none absolute left-3 top-3 size-5 text-zinc-500 sm:top-2.5 sm:size-4 dark:text-zinc-400">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+        </div>
+      </div>
+      <!-- Navigation links -->
+      <a href="/" class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 hover:bg-zinc-950/5 sm:py-2 sm:text-sm/5 dark:text-white dark:hover:bg-white/5">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 shrink-0 fill-zinc-500 sm:size-5">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span class="truncate">Home</span>
+      </a>
+    </div>
+    <!-- Recent Chats section -->
+    <div class="mt-8 flex flex-col gap-0.5">
+      <h3 class="mb-1 px-2 text-xs/6 font-medium text-zinc-500 dark:text-zinc-400">Recent Chats</h3>
+      <% # In a real app, you'd iterate through recent chats here %>
+      <a href="/chats/1" class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 hover:bg-zinc-950/5 sm:py-2 sm:text-sm/5 dark:text-white dark:hover:bg-white/5">
+        <span class="truncate">AI Assistant Features</span>
+      </a>
+      <a href="/chats/2" class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 hover:bg-zinc-950/5 sm:py-2 sm:text-sm/5 dark:text-white dark:hover:bg-white/5">
+        <span class="truncate">Code Review Helper</span>
+      </a>
+    </div>
+    <!-- Projects section -->
+    <div class="mt-8 flex flex-col gap-0.5">
+      <h3 class="mb-1 px-2 text-xs/6 font-medium text-zinc-500 dark:text-zinc-400">Projects</h3>
+      <% # In a real app, you'd iterate through projects here %>
+      <a href="/projects/1" class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 hover:bg-zinc-950/5 sm:py-2 sm:text-sm/5 dark:text-white dark:hover:bg-white/5">
+        <span class="truncate">Personal Blog</span>
+      </a>
+      <a href="/projects/2" class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 hover:bg-zinc-950/5 sm:py-2 sm:text-sm/5 dark:text-white dark:hover:bg-white/5">
+        <span class="truncate">E-commerce App</span>
+      </a>
+    </div>
+    <div class="mt-auto"></div>
+    <!-- Spacer -->
+  </div>
+  <!-- Footer with user profile -->
+  <div class="flex flex-col border-t border-zinc-950/5 p-4 dark:border-white/5">
+    <div data-controller="dropdown" class="group/item relative inline-block w-full">
+      <button data-action="click->dropdown#toggle" class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 hover:bg-zinc-950/5 sm:py-2 sm:text-sm/5 dark:text-white dark:hover:bg-white/5">
+        <span class="inline-grid shrink-0 align-middle rounded-full outline outline-black/10 dark:outline-white/10">
+          <img class="size-full" src="/images/user.jpg" alt="User avatar">
+        </span>
+        <span class="min-w-0">
+          <span class="block truncate text-sm/5 font-medium text-zinc-950 dark:text-white">User Name</span>
+          <span class="block truncate text-xs/5 font-normal text-zinc-500 dark:text-zinc-400">user@example.com</span>
+        </span>
+        <svg data-slot="icon" viewBox="0 0 20 20" aria-hidden="true" class="ml-auto size-5 shrink-0 fill-zinc-500 sm:size-4">
+          <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+        </svg>
+      </button>
+      <!-- User dropdown menu -->
+      <div data-dropdown-target="menu" class="absolute bottom-full left-0 z-10 mb-1 hidden min-w-64 rounded-xl bg-white/75 p-1 shadow-lg ring-1 ring-zinc-950/10 backdrop-blur-xl dark:bg-zinc-800/75 dark:ring-white/10">
+        <a href="/profile" class="flex w-full cursor-default items-center gap-3 rounded-lg px-3.5 py-2.5 text-left text-base/6 text-zinc-950 hover:bg-zinc-950/[2.5%] sm:px-3 sm:py-1.5 sm:text-sm/6 dark:text-white dark:hover:bg-white/5">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 text-zinc-500 sm:size-4">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="10" r="3"></circle>
+            <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path>
+          </svg>
+          <span>My account</span>
+        </a>
+        <hr class="mx-3.5 my-1 h-px border-0 bg-zinc-950/5 sm:mx-3 dark:bg-white/10">
+        <a href="/settings" class="flex w-full cursor-default items-center gap-3 rounded-lg px-3.5 py-2.5 text-left text-base/6 text-zinc-950 hover:bg-zinc-950/[2.5%] sm:px-3 sm:py-1.5 sm:text-sm/6 dark:text-white dark:hover:bg-white/5">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 text-zinc-500 sm:size-4">
+            <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          <span>Settings</span>
+        </a>
+        <hr class="mx-3.5 my-1 h-px border-0 bg-zinc-950/5 sm:mx-3 dark:bg-white/10">
+        <%= button_to "/auth/logout", method: :delete, class: "flex w-full cursor-default items-center gap-3 rounded-lg px-3.5 py-2.5 text-left text-base/6 text-zinc-950 hover:bg-zinc-950/[2.5%] sm:px-3 sm:py-1.5 sm:text-sm/6 dark:text-white dark:hover:bg-white/5" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 text-zinc-500 sm:size-4">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          <span>Sign out</span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>

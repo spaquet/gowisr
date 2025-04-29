@@ -1,0 +1,61 @@
+<!-- app/views/shared/_navbar.html.erb -->
+<div class="flex flex-1 items-center gap-4 py-2.5">
+  <div class="-ml-4 flex-1"></div>
+  <!-- Theme Toggle Button using Stimulus -->
+  <div data-controller="theme" class="flex items-center">
+    <button data-action="theme#toggle" class="flex items-center gap-3 rounded-lg p-2 text-left text-base/6 font-medium text-zinc-950 hover:bg-zinc-950/5 sm:text-sm/5 dark:text-white dark:hover:bg-white/5">
+      <!-- Sun icon for dark mode -->
+      <svg data-theme-target="icon" data-mode="light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 shrink-0 fill-zinc-500 sm:size-5">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2"></path>
+        <path d="M12 20v2"></path>
+        <path d="m4.93 4.93 1.41 1.41"></path>
+        <path d="m17.66 17.66 1.41 1.41"></path>
+        <path d="M2 12h2"></path>
+        <path d="M20 12h2"></path>
+        <path d="m6.34 17.66-1.41 1.41"></path>
+        <path d="m19.07 4.93-1.41 1.41"></path>
+      </svg>
+      <!-- Moon icon for light mode -->
+      <svg data-theme-target="icon" data-mode="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 shrink-0 fill-zinc-500 sm:size-5 hidden">
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+      </svg>
+    </button>
+  </div>
+  <!-- User dropdown on mobile only -->
+  <div data-controller="dropdown" class="group/item relative inline-block lg:hidden">
+    <button data-action="click->dropdown#toggle" class="flex items-center gap-3 rounded-lg p-2 text-left text-base/6 font-medium text-zinc-950 hover:bg-zinc-950/5 sm:text-sm/5 dark:text-white dark:hover:bg-white/5">
+      <span class="inline-grid shrink-0 align-middle rounded-full outline outline-black/10 dark:outline-white/10">
+        <img class="size-full" src="/images/user.jpg" alt="User avatar">
+      </span>
+    </button>
+    <!-- User dropdown menu -->
+    <div data-dropdown-target="menu" class="absolute right-0 top-full z-10 mt-1 hidden min-w-64 rounded-xl bg-white/75 p-1 shadow-lg ring-1 ring-zinc-950/10 backdrop-blur-xl dark:bg-zinc-800/75 dark:ring-white/10">
+      <a href="/profile" class="flex w-full cursor-default items-center gap-3 rounded-lg px-3.5 py-2.5 text-left text-base/6 text-zinc-950 hover:bg-zinc-950/[2.5%] sm:px-3 sm:py-1.5 sm:text-sm/6 dark:text-white dark:hover:bg-white/5">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 text-zinc-500 sm:size-4">
+          <circle cx="12" cy="12" r="10"></circle>
+          <circle cx="12" cy="10" r="3"></circle>
+          <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path>
+        </svg>
+        <span>My account</span>
+      </a>
+      <hr class="mx-3.5 my-1 h-px border-0 bg-zinc-950/5 sm:mx-3 dark:bg-white/10">
+      <a href="/settings" class="flex w-full cursor-default items-center gap-3 rounded-lg px-3.5 py-2.5 text-left text-base/6 text-zinc-950 hover:bg-zinc-950/[2.5%] sm:px-3 sm:py-1.5 sm:text-sm/6 dark:text-white dark:hover:bg-white/5">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 text-zinc-500 sm:size-4">
+          <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+        <span>Settings</span>
+      </a>
+      <hr class="mx-3.5 my-1 h-px border-0 bg-zinc-950/5 sm:mx-3 dark:bg-white/10">
+      <%= button_to "/auth/logout", method: :delete, class: "flex w-full cursor-default items-center gap-3 rounded-lg px-3.5 py-2.5 text-left text-base/6 text-zinc-950 hover:bg-zinc-950/[2.5%] sm:px-3 sm:py-1.5 sm:text-sm/6 dark:text-white dark:hover:bg-white/5" do %>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 text-zinc-500 sm:size-4">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+        <span>Sign out</span>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,158 @@
+<%# app/views/pages/pricing.html.erb %>
+<% content_for :title, "Pricing - Gowisr" %>
+<div class="bg-background-light py-12">
+  <div class="container mx-auto px-4 text-center">
+    <h1 class="text-4xl font-bold mb-4">Simple, transparent pricing</h1>
+    <p class="text-xl text-text-muted max-w-2xl mx-auto">
+      Choose the plan that fits your needs. All plans include our core features.
+    </p>
+  </div>
+</div>
+<div class="container mx-auto px-4 py-16">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Basic Plan -->
+    <div class="bg-background rounded-lg border border-background-lighter shadow-sm overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-2">Basic</h2>
+        <p class="text-text-muted mb-4">For individuals just getting started</p>
+        <div class="mb-6">
+          <span class="text-4xl font-bold">$9</span>
+          <span class="text-text-muted">/month</span>
+        </div>
+        <a href="/auth/register" class="block w-full text-center py-2 px-4 border border-background-lighter bg-background-light hover:bg-background-lighter text-text font-medium rounded-md transition mb-6">
+          Start free trial
+        </a>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-2" %>
+            <span>100 AI queries per month</span>
+          </li>
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-2" %>
+            <span>Basic analytics</span>
+          </li>
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-2" %>
+            <span>Email support</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Pro Plan -->
+    <div class="bg-background rounded-lg border-2 border-primary shadow-sm overflow-hidden transform md:scale-105 z-10">
+      <div class="bg-primary text-white text-center py-2 text-sm font-medium">
+        Most Popular
+      </div>
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-2">Pro</h2>
+        <p class="text-text-muted mb-4">For professionals who need more power</p>
+        <div class="mb-6">
+          <span class="text-4xl font-bold">$29</span>
+          <span class="text-text-muted">/month</span>
+        </div>
+        <a href="/auth/register" class="block w-full text-center py-2 px-4 border border-transparent bg-primary hover:bg-primary-dark text-white font-medium rounded-md transition mb-6">
+          Start free trial
+        </a>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-2" %>
+            <span>500 AI queries per month</span>
+          </li>
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-2" %>
+            <span>Advanced analytics</span>
+          </li>
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-2" %>
+            <span>Priority email support</span>
+          </li>
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-2" %>
+            <span>Data export options</span>
+          </li>
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-2" %>
+            <span>API access</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Business Plan -->
+    <div class="bg-background rounded-lg border border-background-lighter shadow-sm overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-2">Business</h2>
+        <p class="text-text-muted mb-4">For teams and organizations</p>
+        <div class="mb-6">
+          <span class="text-4xl font-bold">$99</span>
+          <span class="text-text-muted">/month</span>
+        </div>
+        <a href="/auth/register" class="block w-full text-center py-2 px-4 border border-background-lighter bg-background-light hover:bg-background-lighter text-text font-medium rounded-md transition mb-6">
+          Start free trial
+        </a>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-2" %>
+            <span>2,000 AI queries per month</span>
+          </li>
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-2" %>
+            <span>Enterprise analytics</span>
+          </li>
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-2" %>
+            <span>24/7 priority support</span>
+          </li>
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-2" %>
+            <span>Advanced data export</span>
+          </li>
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-2" %>
+            <span>Dedicated account manager</span>
+          </li>
+          <li class="flex items-start">
+            <%= icon "check", library: "lucide", class: "h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-2" %>
+            <span>SSO & advanced security</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- FAQ Section -->
+  <div class="mt-24">
+    <h2 class="text-3xl font-semibold text-center mb-12">Frequently Asked Questions</h2>
+    <div class="max-w-3xl mx-auto space-y-8">
+      <div>
+        <h3 class="text-xl font-medium mb-2">What's included in the free trial?</h3>
+        <p class="text-text-muted">All plans come with a 14-day free trial that includes all the features of the Pro plan. No credit card required to start.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-medium mb-2">Can I change plans later?</h3>
+        <p class="text-text-muted">Yes, you can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-medium mb-2">What happens if I exceed my monthly query limit?</h3>
+        <p class="text-text-muted">If you reach your monthly query limit, you can purchase additional queries or upgrade to a higher plan to continue using the service.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-medium mb-2">Do you offer custom enterprise plans?</h3>
+        <p class="text-text-muted">Yes, we offer custom enterprise plans for organizations with specific needs. Contact our sales team to learn more.</p>
+      </div>
+    </div>
+  </div>
+  <!-- CTA Section -->
+  <div class="mt-24 text-center">
+    <h2 class="text-2xl font-semibold mb-4">Ready to get started?</h2>
+    <p class="text-text-muted mb-8 max-w-2xl mx-auto">
+      Join thousands of users making better decisions with Gowisr. Start your free trial today.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/auth/register" class="px-6 py-3 border border-transparent bg-primary hover:bg-primary-dark text-white font-medium rounded-md transition">
+        Start free trial
+      </a>
+      <a href="/contact" class="px-6 py-3 border border-background-lighter bg-background-light hover:bg-background-lighter text-text font-medium rounded-md transition">
+        Contact sales
+      </a>
+    </div>
+  </div>
+</div>
