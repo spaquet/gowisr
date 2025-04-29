@@ -17,14 +17,16 @@
         </svg>
         <span class="truncate">New Chat</span>
       <% end %>
-      <!-- Search -->
-      <div class="my-2 relative">
-        <div class="relative block w-full">
-          <input type="text" placeholder="Search chats..." class="block w-full appearance-none rounded-lg border border-zinc-950/10 py-[calc(theme(spacing.2.5)-1px)] pl-10 pr-[calc(theme(spacing.3.5)-1px)] text-base/6 text-zinc-950 placeholder:text-zinc-500 focus:border-zinc-950/20 focus:outline-hidden focus:ring-2 focus:ring-blue-500 sm:py-[calc(theme(spacing.1.5)-1px)] sm:text-sm/6 dark:border-white/10 dark:bg-white/5 dark:text-white dark:focus:border-white/20">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pointer-events-none absolute left-3 top-3 size-5 text-zinc-500 sm:top-2.5 sm:size-4 dark:text-zinc-400">
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.3-4.3"></path>
-          </svg>
+      <!-- Improved Search -->
+      <div class="my-2">
+        <div data-slot="control" class="relative block w-full">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 text-zinc-500 sm:size-4 dark:text-zinc-400">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg>
+          </span>
+          <input type="text" placeholder="Search chats..." class="relative block w-full appearance-none rounded-lg border border-zinc-950/10 bg-transparent py-[calc(theme(spacing.2.5)-1px)] pl-10 pr-[calc(theme(spacing.3.5)-1px)] text-base/6 text-zinc-950 placeholder:text-zinc-500 focus:border-zinc-950/20 focus:outline-hidden focus:ring-2 focus:ring-blue-500 sm:py-[calc(theme(spacing.1.5)-1px)] sm:text-sm/6 dark:border-white/10 dark:bg-white/5 dark:text-white dark:focus:border-white/20">
         </div>
       </div>
       <!-- Navigation links -->
@@ -56,7 +58,7 @@
           <% end %>
         <% end %>
       </div>
-      <% # Iterate through recent chats (limit 10) %>
+      <!-- Recent chats list -->
       <% if defined?(current_user) && current_user&.chats&.any? %>
         <% current_user.chats.active.recent.limit(10).each do |chat| %>
           <%= link_to chat_path(chat), class: "flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 hover:bg-zinc-950/5 sm:py-2 sm:text-sm/5 dark:text-white dark:hover:bg-white/5 #{'bg-zinc-950/5 dark:bg-white/5' if defined?(current_chat) && current_chat&.id == chat.id}" do %>
@@ -72,8 +74,8 @@
         </div>
       <% end %>
     </div>
-    <div class="mt-auto"></div>
     <!-- Spacer -->
+    <div class="mt-auto"></div>
   </div>
   <!-- Footer with user profile -->
   <div class="flex flex-col border-t border-zinc-950/5 p-4 dark:border-white/5">

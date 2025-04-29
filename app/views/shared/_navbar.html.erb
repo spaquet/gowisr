@@ -26,7 +26,9 @@
   <div data-controller="dropdown" class="group/item relative inline-block lg:hidden">
     <button data-action="click->dropdown#toggle" class="flex items-center gap-3 rounded-lg p-2 text-left text-base/6 font-medium text-zinc-950 hover:bg-zinc-950/5 sm:text-sm/5 dark:text-white dark:hover:bg-white/5">
       <span class="inline-grid shrink-0 align-middle rounded-full outline outline-black/10 dark:outline-white/10">
-        <img class="size-full" src="/images/user.jpg" alt="User avatar">
+        <%= image_tag current_user.avatar_url(size: 80), 
+                alt: current_user.display_name, 
+                class: "size-8 rounded-full ring-2 ring-white dark:ring-zinc-900" %>
       </span>
     </button>
     <!-- User dropdown menu -->
