@@ -28,7 +28,7 @@ class AuthController < ApplicationController
       Rails.logger.debug "Invalid email, rendering login"
       flash.now[:alert] = "Please enter a valid email address."
       respond_to do |format|
-        format.html { render :login }
+        # format.html { render :login }
         format.turbo_stream { render turbo_stream: turbo_stream.replace("flash", partial: "shared/flash") }
       end
       return
@@ -67,7 +67,7 @@ class AuthController < ApplicationController
         "A magic link has been sent! Check the Stytch Dashboard for the test link."
 
       respond_to do |format|
-        format.html { redirect_to auth_link_sent_path(email: email), notice: success_message }
+        # format.html { redirect_to auth_link_sent_path(email: email), notice: success_message }
         format.turbo_stream do
           flash.now[:notice] = success_message
           render turbo_stream: turbo_stream.replace("flash", partial: "shared/flash")
@@ -77,7 +77,7 @@ class AuthController < ApplicationController
       Rails.logger.error "Error sending magic link: #{e.message}"
       flash.now[:alert] = "We couldn’t send the magic link. Please try again or contact support."
       respond_to do |format|
-        format.html { render :login }
+        # format.html { render :login }
         format.turbo_stream { render turbo_stream: turbo_stream.replace("flash", partial: "shared/flash") }
       end
     end

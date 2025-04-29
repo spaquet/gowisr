@@ -73,11 +73,13 @@
     <div data-controller="dropdown" class="group/item relative inline-block w-full">
       <button data-action="click->dropdown#toggle" class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 hover:bg-zinc-950/5 sm:py-2 sm:text-sm/5 dark:text-white dark:hover:bg-white/5">
         <span class="inline-grid shrink-0 align-middle rounded-full outline outline-black/10 dark:outline-white/10">
-          <img class="size-full" src="/images/user.jpg" alt="User avatar">
+          <%= image_tag current_user.avatar_url(size: 80), 
+                alt: current_user.display_name, 
+                class: "size-8 rounded-full ring-2 ring-white dark:ring-zinc-900" %>
         </span>
         <span class="min-w-0">
-          <span class="block truncate text-sm/5 font-medium text-zinc-950 dark:text-white">User Name</span>
-          <span class="block truncate text-xs/5 font-normal text-zinc-500 dark:text-zinc-400">user@example.com</span>
+          <span class="block truncate text-sm/5 font-medium text-zinc-950 dark:text-white"><%= current_user.display_name %></span>
+          <span class="block truncate text-xs/5 font-normal text-zinc-500 dark:text-zinc-400"><%= current_user.email %></span>
         </span>
         <svg data-slot="icon" viewBox="0 0 20 20" aria-hidden="true" class="ml-auto size-5 shrink-0 fill-zinc-500 sm:size-4">
           <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
@@ -85,22 +87,22 @@
       </button>
       <!-- User dropdown menu -->
       <div data-dropdown-target="menu" class="absolute bottom-full left-0 z-10 mb-1 hidden min-w-64 rounded-xl bg-white/75 p-1 shadow-lg ring-1 ring-zinc-950/10 backdrop-blur-xl dark:bg-zinc-800/75 dark:ring-white/10">
-        <a href="/profile" class="flex w-full cursor-default items-center gap-3 rounded-lg px-3.5 py-2.5 text-left text-base/6 text-zinc-950 hover:bg-zinc-950/[2.5%] sm:px-3 sm:py-1.5 sm:text-sm/6 dark:text-white dark:hover:bg-white/5">
+        <%= link_to profile_path, class: "flex w-full cursor-default items-center gap-3 rounded-lg px-3.5 py-2.5 text-left text-base/6 text-zinc-950 hover:bg-zinc-950/[2.5%] sm:px-3 sm:py-1.5 sm:text-sm/6 dark:text-white dark:hover:bg-white/5" do %>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 text-zinc-500 sm:size-4">
             <circle cx="12" cy="12" r="10"></circle>
             <circle cx="12" cy="10" r="3"></circle>
             <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path>
           </svg>
           <span>My account</span>
-        </a>
+        <% end %>
         <hr class="mx-3.5 my-1 h-px border-0 bg-zinc-950/5 sm:mx-3 dark:bg-white/10">
-        <a href="/settings" class="flex w-full cursor-default items-center gap-3 rounded-lg px-3.5 py-2.5 text-left text-base/6 text-zinc-950 hover:bg-zinc-950/[2.5%] sm:px-3 sm:py-1.5 sm:text-sm/6 dark:text-white dark:hover:bg-white/5">
+        <%= link_to settings_path, class: "flex w-full cursor-default items-center gap-3 rounded-lg px-3.5 py-2.5 text-left text-base/6 text-zinc-950 hover:bg-zinc-950/[2.5%] sm:px-3 sm:py-1.5 sm:text-sm/6 dark:text-white dark:hover:bg-white/5" do %>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 text-zinc-500 sm:size-4">
             <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
             <circle cx="12" cy="12" r="3"></circle>
           </svg>
           <span>Settings</span>
-        </a>
+        <% end %>
         <hr class="mx-3.5 my-1 h-px border-0 bg-zinc-950/5 sm:mx-3 dark:bg-white/10">
         <%= button_to "/auth/logout", method: :delete, class: "flex w-full cursor-default items-center gap-3 rounded-lg px-3.5 py-2.5 text-left text-base/6 text-zinc-950 hover:bg-zinc-950/[2.5%] sm:px-3 sm:py-1.5 sm:text-sm/6 dark:text-white dark:hover:bg-white/5" do %>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 text-zinc-500 sm:size-4">

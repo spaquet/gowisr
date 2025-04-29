@@ -5,10 +5,12 @@ export default class extends Controller {
   static targets = ["lightIcon", "darkIcon"]
 
   connect() {
+    console.debug("ThemeController connected")
     this.updateIcons()
   }
 
   toggle() {
+    console.debug("ThemeController toggle")
     if (document.documentElement.classList.contains('dark')) {
       document.documentElement.classList.remove('dark')
       localStorage.theme = 'light'

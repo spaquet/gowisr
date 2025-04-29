@@ -12,11 +12,11 @@
         </div>
         <span class="text-xl font-semibold text-zinc-900 dark:text-white">Gowisr</span>
       </div>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-4" data-controller="theme">
         <!-- Theme toggle button -->
-        <button id="theme-toggle" class="rounded-lg p-2 text-zinc-500 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800">
+        <button data-action="theme#toggle" class="rounded-lg p-2 text-zinc-500 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800">
           <!-- Sun icon for dark mode -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 dark:hidden">
+          <svg data-theme-target="lightIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 dark:hidden">
             <circle cx="12" cy="12" r="4"></circle>
             <path d="M12 2v2"></path>
             <path d="M12 20v2"></path>
@@ -28,12 +28,16 @@
             <path d="m19.07 4.93-1.41 1.41"></path>
           </svg>
           <!-- Moon icon for light mode -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 hidden dark:inline">
+          <svg data-theme-target="darkIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 hidden dark:inline">
             <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
           </svg>
         </button>
-        <a href="/auth/login" class="rounded-lg px-3 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800">Log in</a>
-        <a href="/auth/register" class="rounded-lg bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">Sign up</a>
+        <% if user_signed_in? %>
+          <%= link_to "Dashboard", dashboard_path, class: "rounded-lg bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600" %>
+        <% else %>
+          <%= link_to "Log in", auth_login_path, class: "rounded-lg px-3 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800" %>
+          <%= link_to "Sign up", auth_register_path, class: "rounded-lg bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600" %>
+        <% end %>
       </div>
     </div>
   </header>
