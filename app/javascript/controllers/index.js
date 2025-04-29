@@ -4,11 +4,23 @@
 
 import { application } from "./application"
 
+import AutofillController from "./autofill_controller"
+application.register("autofill", AutofillController)
+
 import DropdownController from "./dropdown_controller"
 application.register("dropdown", DropdownController)
 
+import DropzoneController from "./dropzone_controller"
+application.register("dropzone", DropzoneController)
+
+import ModalController from "./modal_controller"
+application.register("modal", ModalController)
+
 import SidebarController from "./sidebar_controller"
 application.register("sidebar", SidebarController)
+
+import TextareaAutogrowController from "./textarea_autogrow_controller"
+application.register("textarea-autogrow", TextareaAutogrowController)
 
 import ThemeController from "./theme_controller"
 application.register("theme", ThemeController)

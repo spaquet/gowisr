@@ -1,0 +1,2 @@
+class LlmProvider < ApplicationRecord
+end

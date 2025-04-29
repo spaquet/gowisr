@@ -1,5 +1,10 @@
 # app/models/user.rb
 class User < ApplicationRecord
+  # Associations
+  has_many :chats, dependent: :destroy
+  has_many :messages, dependent: :nullify
+  has_many :llm_interactions, through: :chats
+
   # Validations
   validates :email, presence: true, uniqueness: true,
             format: { with: URI::MailTo::EMAIL_REGEXP }
@@ -60,6 +65,18 @@ class User < ApplicationRecord
 
   def from_oauth?
     provider.present? && uid.present?
+  end
+
+  def favorite_chats
+    chats.where(is_favorite: true).order(last_activity_at: :desc)
+  end
+
+  def recent_chats(limit = 10)
+    chats.active.order(last_activity_at: :desc).limit(limit)
+  end
+
+  def create_chat(params)
+    chats.create(params)
   end
 
   private

@@ -44,4 +44,14 @@ Rails.application.routes.draw do
 
   # Catch all for static pages
   get ":page", to: "pages#show", as: :page, constraints: { page: /[a-z0-9-]+/ }
+
+  # Chat and messages routes
+  resources :chats do
+    member do
+      patch :toggle_favorite
+      patch :toggle_thinking
+    end
+
+    resources :messages, only: [ :create, :destroy ]
+  end
 end

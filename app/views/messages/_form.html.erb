@@ -1,0 +1,53 @@
+<!-- app/views/messages/_form.html.erb -->
+<%= form_with model: [chat, Message.new], class: "mt-4", id: "new_message_form", data: { controller: "dropzone", action: "submit->dropzone#submitForm", turbo: true } do |form| %>
+  <div class="relative">
+    <!-- File Preview Area -->
+    <div data-dropzone-target="preview" class="mb-2 hidden">
+      <div class="rounded-lg border border-zinc-200 bg-zinc-50 p-2 dark:border-zinc-700 dark:bg-zinc-800">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-medium text-zinc-900 dark:text-white">
+            Attached Files (<span data-dropzone-target="count">0</span>)
+          </h3>
+          <button type="button" data-action="dropzone#clearFiles" class="text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div data-dropzone-target="files" class="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2"></div>
+      </div>
+    </div>
+    <!-- Input Area -->
+    <div class="flex items-end rounded-lg border border-zinc-300 bg-white focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800">
+      <!-- Message Input -->
+      <%= form.text_area :content, 
+          class: "block w-full resize-none border-0 bg-transparent p-3 text-zinc-900 placeholder:text-zinc-500 focus:ring-0 sm:text-sm sm:leading-6 dark:text-white dark:placeholder:text-zinc-400",
+          placeholder: "Message #{chat.llm_provider.name}...",
+          rows: 1,
+          required: true,
+          data: { 
+            controller: "textarea-autogrow",
+            action: "input->textarea-autogrow#resize keydown->textarea-autogrow#handleKeydown"
+          } %>
+      <!-- Toolbar -->
+      <div class="flex shrink-0 items-center space-x-1 self-end px-2 py-2 sm:space-x-2">
+        <!-- Attach File Button -->
+        <button type="button" 
+                class="rounded-full p-1.5 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-700 dark:hover:text-zinc-300"
+                data-action="click->dropzone#openFilePicker">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13" />
+          </svg>
+        </button>
+        <!-- Hidden File Input -->
+        <%= form.file_field :files, multiple: true, direct_upload: true, class: "hidden", data: { dropzone_target: "input" } %>
+        <!-- Send Button -->
+        <button type="submit" class="rounded-full bg-blue-600 p-1.5 text-white hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 dark:bg-blue-500 dark:hover:bg-blue-400">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+<% end %>
