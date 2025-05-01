@@ -4,7 +4,7 @@ class CreateLlmProviders < ActiveRecord::Migration[8.0]
     create_table :llm_providers, id: :uuid do |t|
       t.string :name, null: false
       t.string :provider_type, null: false # anthropic, openai, etc.
-      t.string :model_name, null: false # claude-3-opus, gpt-4, etc.
+      t.string :llm_model_name, null: false # claude-3-opus, gpt-4, etc.
       t.jsonb :default_parameters, default: {}
       t.text :description
       t.boolean :supports_thinking, default: false
@@ -17,6 +17,9 @@ class CreateLlmProviders < ActiveRecord::Migration[8.0]
 
       t.timestamps
     end
-    add_index :llm_providers, [ :provider_type, :model_name ], unique: true
+    add_index :llm_providers, [ :provider_type, :llm_model_name ], unique: true
+    add_index :llm_providers, :provider_type
+    add_index :llm_providers, :supports_thinking
+    add_index :llm_providers, :supports_files
   end
 end

@@ -12,7 +12,7 @@ llm_providers = [
   {
     name: "Claude 3 Opus",
     provider_type: "anthropic",
-    model_name: "claude-3-opus-20240229",
+    llm_model_name: "claude-3-opus-20240229",
     description: "Most powerful model for highly complex tasks requiring deep expertise and outstanding performance.",
     supports_thinking: true,
     supports_files: true,
@@ -28,7 +28,7 @@ llm_providers = [
   {
     name: "Claude 3 Sonnet",
     provider_type: "anthropic",
-    model_name: "claude-3-sonnet-20240229",
+    llm_model_name: "claude-3-sonnet-20240229",
     description: "Ideal balance of intelligence and speed for enterprise workloads.",
     supports_thinking: true,
     supports_files: true,
@@ -44,7 +44,7 @@ llm_providers = [
   {
     name: "Claude 3 Haiku",
     provider_type: "anthropic",
-    model_name: "claude-3-haiku-20240307",
+    llm_model_name: "claude-3-haiku-20240307",
     description: "Fastest and most compact model for near-instant responsiveness.",
     supports_thinking: false,
     supports_files: true,
@@ -60,7 +60,7 @@ llm_providers = [
   {
     name: "GPT-4o",
     provider_type: "openai",
-    model_name: "gpt-4o",
+    llm_model_name: "gpt-4o",
     description: "Most capable model, optimized for speed and multimodal capabilities.",
     supports_thinking: false,
     supports_files: true,
@@ -76,7 +76,7 @@ llm_providers = [
   {
     name: "GPT-4 Turbo",
     provider_type: "openai",
-    model_name: "gpt-4-turbo-preview",
+    llm_model_name: "gpt-4-turbo-preview",
     description: "Fast and powerful model with knowledge up to April 2023.",
     supports_thinking: false,
     supports_files: true,
@@ -92,7 +92,7 @@ llm_providers = [
   {
     name: "GPT-3.5 Turbo",
     provider_type: "openai",
-    model_name: "gpt-3.5-turbo",
+    llm_model_name: "gpt-3.5-turbo",
     description: "Smart, fast, and economical model for a wide range of tasks.",
     supports_thinking: false,
     supports_files: false,
@@ -108,7 +108,7 @@ llm_providers = [
   {
     name: "Gemini Pro",
     provider_type: "google",
-    model_name: "gemini-pro",
+    llm_model_name: "gemini-pro",
     description: "Google's capable large language model for various tasks.",
     supports_thinking: false,
     supports_files: false,
@@ -126,7 +126,7 @@ llm_providers = [
 llm_providers.each do |provider_data|
   LlmProvider.find_or_create_by!(
     provider_type: provider_data[:provider_type],
-    model_name: provider_data[:model_name]
+    llm_model_name: provider_data[:llm_model_name]
   ) do |provider|
     provider.assign_attributes(provider_data)
   end

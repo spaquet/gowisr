@@ -63,7 +63,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_29_051812) do
   create_table "llm_providers", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", null: false
     t.string "provider_type", null: false
-    t.string "model_name", null: false
+    t.string "llm_model_name", null: false
     t.jsonb "default_parameters", default: {}
     t.text "description"
     t.boolean "supports_thinking", default: false
@@ -75,7 +75,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_29_051812) do
     t.string "avatar_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["provider_type", "model_name"], name: "index_llm_providers_on_provider_type_and_model_name", unique: true
+    t.index ["provider_type", "llm_model_name"], name: "index_llm_providers_on_provider_type_and_llm_model_name", unique: true
   end
 
   create_table "messages", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

@@ -7,9 +7,9 @@
 #  avatar_url         :string
 #  default_parameters :jsonb
 #  description        :text
+#  llm_model_name     :string           not null
 #  max_file_size_mb   :integer          default(10)
 #  max_files          :integer          default(5)
-#  model_name         :string           not null
 #  name               :string           not null
 #  provider_type      :string           not null
 #  supports_files     :boolean          default(FALSE)
@@ -20,7 +20,7 @@
 #
 # Indexes
 #
-#  index_llm_providers_on_provider_type_and_model_name  (provider_type,model_name) UNIQUE
+#  index_llm_providers_on_provider_type_and_llm_model_name  (provider_type,llm_model_name) UNIQUE
 #
 require "test_helper"
 
